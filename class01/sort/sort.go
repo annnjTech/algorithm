@@ -1,9 +1,12 @@
-package algorithm
+package sort
+
+import "fmt"
 
 func swap(arr []int, i, j int) {
 	arr[i], arr[j] = arr[j], arr[i]
 }
 
+// SelectSort 选择排序
 func SelectSort(arr []int) {
 	if arr == nil || len(arr) < 2 {
 		return
@@ -23,6 +26,7 @@ func SelectSort(arr []int) {
 	}
 }
 
+// BubbleSort 冒泡排序
 func BubbleSort(arr []int) {
 	if arr == nil || len(arr) < 2 {
 		return
@@ -38,6 +42,7 @@ func BubbleSort(arr []int) {
 	}
 }
 
+// InsertSort1 插入排序1
 func InsertSort1(arr []int) {
 	if arr == nil || len(arr) < 2 {
 		return
@@ -52,6 +57,7 @@ func InsertSort1(arr []int) {
 	}
 }
 
+// InsertSort2 插入排序2
 func InsertSort2(arr []int) {
 	if arr == nil || len(arr) < 2 {
 		return
@@ -63,4 +69,11 @@ func InsertSort2(arr []int) {
 			swap(arr, pre, pre+1)
 		}
 	}
+}
+
+func PrintArray(arr []int) {
+	for _, item := range arr {
+		fmt.Print(item, " ")
+	}
+	fmt.Println()
 }
