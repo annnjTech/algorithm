@@ -9,11 +9,10 @@ func main() {
 	//fmt.Println(rand.New(rand.NewSource(time.Now().UnixNano())).Float32())
 
 	fmt.Println("测试开始")
-	testTimes := 100000000
-	//count := 0
+	testTimes := 1000
 	counts := make(map[int]int)
 	for i := 0; i < testTimes; i++ {
-		ans := rand_to_rand.F()
+		ans := rand_to_rand.Y()
 		counts[ans]++
 	}
 	for i := 0; i <= len(counts); i++ {
