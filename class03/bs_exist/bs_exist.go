@@ -1,5 +1,6 @@
 package bs_exist
 
+// Find 二分查找有序数组arr中是否存在num
 func Find(arr []int, num int) bool {
 	if arr == nil || len(arr) == 0 {
 		return false
