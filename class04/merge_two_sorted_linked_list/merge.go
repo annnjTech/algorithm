@@ -15,6 +15,8 @@ func MergeTwoSortedLinkedLists(head1, head2 *model.Node) *model.Node {
 	// 确定两个链表中的头结点中的最小值，作为合并后的链表的头结点
 	if head1.Value <= head2.Value {
 		head = head1
+	} else {
+		head = head2
 	}
 
 	// cur1用于遍历链表1
