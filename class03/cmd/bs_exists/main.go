@@ -1,11 +1,12 @@
 package main
 
 import (
-	"algorithm/class03/bs_exist"
-	"algorithm/class03/bs_exist/comp"
+	"algorithm/class01/sort"
+	"algorithm/class03/bs_exists"
+	"algorithm/class03/bs_exists/comp"
+	"algorithm/class03/common"
 	"fmt"
 	"math/rand"
-	sort "sort2"
 	"time"
 )
 
@@ -16,10 +17,10 @@ func main() {
 	success := true
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	for i := 0; i < testTimes; i++ {
-		arr := comp.GenerateRandomArray(maxSize, maxValue)
-		sort.InsertSort(arr)
+		arr := common.GenerateRandomArray(maxSize, maxValue)
+		sort.InsertSort2(arr)
 		value := (int)((float64)(maxValue+1)*r.Float64()) - (int)((float64)(maxValue)*r.Float64())
-		if comp.Test(arr, value) != bs_exist.Find(arr, value) {
+		if comp.TestBsExists(arr, value) != bs_exists.BsFind(arr, value) {
 			fmt.Println("出错啦！")
 			success = false
 			break

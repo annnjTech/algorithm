@@ -1,6 +1,7 @@
-package bs_exist
+package bs_exists
 
-func Find(arr []int, num int) bool {
+// BsFind 二分查找有序数组arr中是否存在num
+func BsFind(arr []int, num int) bool {
 	if arr == nil || len(arr) == 0 {
 		return false
 	}
