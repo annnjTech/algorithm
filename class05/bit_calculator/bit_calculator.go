@@ -115,7 +115,7 @@ func div(a, b int64) int64 {
 			x = Minus(x, y<<i)
 		}
 	}
-	if (!IsNeg(a) && IsNeg(b)) || (IsNeg(a) && !IsNeg(b)) {
+	if IsNeg(a) != IsNeg(b) { // 异或判断符号，如果a和b布尔值不同，则结果符号为负
 		res = NegNum(res)
 	}
 	return res
