@@ -10,7 +10,7 @@ type Info struct {
 	Height     int
 }
 
-// IsBalanced 验证是否为平衡二叉树
+// IsBalanced 验证是否为平衡二叉树 //
 // 平衡二叉树：左右子树的高度差的绝对值不超过1
 func IsBalanced(root *model.TreeNode) bool {
 	return process(root).IsBalanced
