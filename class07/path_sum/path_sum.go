@@ -18,16 +18,19 @@ func hasPathSum(root *model.TreeNode, sum int) bool {
 }
 
 func process(x *model.TreeNode, preSum, sum int) {
+	// 叶子节点
 	if x.Left == nil && x.Right == nil {
 		if x.Value+preSum == sum {
 			isSum = true
 		}
 		return
 	}
+	// 非叶子节点
+	preSum += x.Value
 	if x.Left != nil {
-		process(x.Left, preSum+x.Value, sum)
+		process(x.Left, preSum, sum)
 	}
 	if x.Right != nil {
-		process(x.Right, preSum+x.Value, sum)
+		process(x.Right, preSum, sum)
 	}
 }
