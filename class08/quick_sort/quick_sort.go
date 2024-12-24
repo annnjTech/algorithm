@@ -19,7 +19,7 @@ func process(arr *[]int, left, right int) {
 	process(arr, equalLastIndex+1, right) // 递归处理 > 区域，从equalLastIndex+1...right
 }
 
-// partition
+// partition，分区函数，把数组arr[left...right]分成<P的区域，=P的区域，>P的区域
 /*
 一组L...R的元素中，以最后一个元素P值为标准，分成三个区域：<P的区域在左边，=P的区域在中间，>P的区域在右边
 P表示数组的最后一个元素的值，下标是right
